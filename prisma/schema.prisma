@@ -11,5 +11,5 @@ datasource db {
 model Pembeli {
   id Int @id @default(autoincrement())
   nama String
-  makanan String
+  pesanan String
 }
