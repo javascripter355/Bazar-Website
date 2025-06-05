@@ -2,6 +2,7 @@ import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
 import keripikKaca from "../public/keripik-kaca.jpeg";
 import basreng from "../public/basreng.jpeg";
+import airMineral from "../public/air-mineral.webp";
 
 export default function Home () {
     return (
@@ -27,8 +28,12 @@ export default function Home () {
                     <h3 className="text-[#ddd]">Basreng</h3>
                 </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center gap-5">
                 <h2 className="font-sans font-bold text-2xl">Drink</h2>
+                <div className="flex flex-col gap-2 items-center">
+                    <Image className="rounded-lg shadow-md" src={airMineral} alt="Air Mineral" width={200} height={120}></Image>
+                    <h3 className="text-[#ddd]">Air Mineral</h3>
+                </div>
             </div>
         </div>
     );
