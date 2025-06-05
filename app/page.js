@@ -13,22 +13,22 @@ export default function Home () {
                 mt-4 text-[#0a0a0a] rounded-full px-6 py-3 text-sm flex justify-center">Pre-order</button>
             </div>
             <div className="flex flex-col items-center mt-10 font-sans gap-5">
-                <h2 className="font-sans font-bold text-lg mb-1">Food</h2>
-                <div className="flex flex-col items-center gap-1">
+                <h2 className="font-sans font-bold text-2xl mb-1">Food</h2>
+                <div className="flex flex-col items-center gap-2">
                     <Image className="rounded-lg shadow-md" src={tahuIsi} alt="Tahu Isi" width={200} height={120}></Image>
-                    <h3>Tahu Isi</h3>
+                    <h3 className="text-[#ddd]">Tahu Isi</h3>
                 </div>
-                <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col items-center gap-2">
                     <Image className="rounded-lg shadow-md" src={keripikKaca} alt="Keripik Kaca" width={200} height={120}></Image>
-                    <h3>Keripik Kaca</h3>
+                    <h3 className="text-[#ddd]">Keripik Kaca</h3>
                 </div>
-                <div className="flex flex-col items-center gap-1">
+                <div className="flex flex-col items-center gap-2">
                     <Image className="rounded-lg shadow-md" src={basreng} alt="Basreng" width={200} height={120}></Image>
-                    <h3>Basreng</h3>
+                    <h3 className="text-[#ddd]">Basreng</h3>
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <h2 className="font-sans font-bold text-lg">Drink</h2>
+                <h2 className="font-sans font-bold text-2xl">Drink</h2>
             </div>
         </div>
     );
