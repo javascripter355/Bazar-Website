@@ -8,7 +8,7 @@ export default function Home () {
     return (
         <div className="grid place-items-center w-screen px-16 py-32 gap-10 grid-rows-[auto_auto_auto]">
             <div className="flex flex-col items-center gap-2">
-                <h1 className="text-3xl font-sans text-center font-bold">Lorem ipsum dolor sit amet.</h1>
+                <h1 className="text-3xl font-sans text-center font-bold">Lorem ipsum <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">dolor</span> sit amet.</h1>
                 <h2 className="text-[#bbb] font-mono text-center">Consetectur adispicing elit.</h2>
                 <button className="border-1 font-sans bg-[#fff] transition-all duration-300 ease-out hover:bg-[#dfdfdf] 
                 mt-4 text-[#0a0a0a] rounded-full px-6 py-3 text-sm flex justify-center">Pre-order</button>
