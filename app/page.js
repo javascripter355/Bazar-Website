@@ -9,7 +9,7 @@ import airMineral from "../public/air-mineral.webp";
 
 export default function Home () {
     return (
-        <motion.div className="grid place-items-center w-screen px-16 py-32 gap-10 grid-rows-[auto_auto_auto]">
+        <div className="grid place-items-center w-screen px-16 py-32 gap-10 grid-rows-[auto_auto_auto]">
             <div className="flex flex-col items-center gap-2">
                 <h1 className="text-3xl font-sans text-center font-bold">Lorem ipsum <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">dolor</span> sit amet.</h1>
                 <h2 className="text-[#bbb] font-mono text-center">Consetectur adispicing elit.</h2>
@@ -38,6 +38,6 @@ export default function Home () {
                     <h3 className="text-[#ddd]">Air Mineral</h3>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }
