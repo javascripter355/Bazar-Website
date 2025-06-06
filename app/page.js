@@ -3,11 +3,29 @@
 import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
 import { motion } from "motion/react";
+import { useState } from "react";
 import keripikKaca from "../public/keripik-kaca.jpeg";
 import basreng from "../public/basreng.jpeg";
 import airMineral from "../public/air-mineral.webp";
 
 export default function Home () {
+    const variants = {
+        hidden: {
+            y: 10,
+            opacity: 0,
+            filter: 'blur(5px)'
+        },
+        show: {
+            y: 0,
+            opacity: 1,
+            filter: 'blur(0px)',
+            transition: {
+                duration: 0.5,
+                staggerChildren: 0.1
+            }
+        }
+    }
+
     return (
         <div className="grid place-items-center w-screen px-16 py-32 gap-10 grid-rows-[auto_auto_auto]">
             <motion.div className="flex flex-col items-center gap-2">
