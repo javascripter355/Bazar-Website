@@ -3,11 +3,11 @@
 import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
 import { motion } from "motion/react";
-import { useState } from "react";
-import ThemeProvider from "@/components/theme-provider";
+import { useState, useEffect } from "react";
 import keripikKaca from "../public/keripik-kaca.jpeg";
 import basreng from "../public/basreng.jpeg";
 import airMineral from "../public/air-mineral.webp";
+import { useTheme } from "next-themes";
 
 export default function Home () {
     const variants = {
@@ -26,6 +26,12 @@ export default function Home () {
             }
         }
     }
+
+    const { setTheme } = useTheme()
+
+    useEffect(() => {
+        setTheme("system"); 
+    }, [setTheme]);
 
     return (
         <div className="grid place-items-center w-screen px-16 py-32 gap-16 grid-rows-[auto_auto_auto]">
