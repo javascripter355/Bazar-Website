@@ -29,10 +29,6 @@ export default function Home () {
 
     const { setTheme } = useTheme()
 
-    useEffect(() => {
-        setTheme("system"); 
-    }, [setTheme]);
-
     return (
         <div className="grid place-items-center w-screen px-16 py-32 gap-16 grid-rows-[auto_auto_auto]">
             <motion.div variants={variants} initial="hidden" whileInView="show" viewport={{ margin: "-50px", once: true }} className="flex flex-col items-center gap-2">
