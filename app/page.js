@@ -4,6 +4,7 @@ import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import keripikKaca from "../public/keripik-kaca.jpeg";
 import basreng from "../public/basreng.jpeg";
 import airMineral from "../public/air-mineral.webp";
@@ -36,8 +37,8 @@ export default function Home () {
                 <motion.h2 variants={variants} className="text-[#bbb] font-mono text-center">Consetectur adispicing elit.</motion.h2>
                 <motion.span variants={variants} className="hidden"></motion.span>
                 <motion.span variants={variants} className="hidden"></motion.span>
-                <motion.button variants={variants} className="border-1 font-sans bg-[#fff] transition-all duration-300 ease-out hover:bg-[#dfdfdf] 
-                mt-4 text-[#0a0a0a] rounded-full px-6 py-3 text-sm flex justify-center">Pre-order</motion.button>
+                <motion.div variants={variants}>
+                    <Button className="font-sans mt-4">Pre-order</Button></motion.div>
             </motion.div>
             <motion.div variants={variants} className="flex flex-col items-center mt-10 font-sans gap-5">
                 <motion.h2 variants={variants} initial="hidden" whileInView="show" viewport={{ margin: "-50px", once: true }} className="font-sans font-bold text-2xl mb-1">Food</motion.h2>
