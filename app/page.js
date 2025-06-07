@@ -4,6 +4,7 @@ import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
 import { motion } from "motion/react";
 import { useState } from "react";
+import ThemeProvider from "@/components/ui/theme-provider";
 import keripikKaca from "../public/keripik-kaca.jpeg";
 import basreng from "../public/basreng.jpeg";
 import airMineral from "../public/air-mineral.webp";
