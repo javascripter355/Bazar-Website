@@ -206,7 +206,7 @@ export default function Home () {
             <AnimatePresence>
                 {error ? (
                     <motion.div variants={preorderVariants} initial="hidden" animate="show" exit="hidden"
-                        className="fixed inset-0 flex justify-center items-center max-w-xs mx-auto">
+                        className="fixed inset-0 flex justify-center items-center md:max-w-100 max-w-65 mx-auto">
                         <Alert variant="destructive">
                             <AlertCircleIcon />
                             <AlertTitle>{error}</AlertTitle>
