@@ -22,6 +22,7 @@ import { AlertCircleIcon } from "lucide-react";
 export default function Home () {
     const [popUp, setPopUp] = useState(false);
     const [name, setName] = useState("");
+    const [amount, setAmount] = useState("");
     const [order, setOrder] = useState("");
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
@@ -72,9 +73,15 @@ export default function Home () {
 
         try {
             setPopUp(false);
+
+            if (amount < 1 || isNaN(amount)) {
+                setError("Jumlah tidak valid!")
+            }
+
             const res = await axios.post(`/api/preorder`, {
                 name,
-                order
+                order,
+                amount
             });
 
             if (res.status === 201) {
@@ -172,7 +179,7 @@ export default function Home () {
                                 </CardAction>
                             </CardHeader>
                             <CardContent>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="flex flex-col gap-6">
                                         <div className="flex flex-col gap-2">
                                             <Label htmlFor="text">Nama Lengkap/Kelas</Label>
@@ -204,6 +211,14 @@ export default function Home () {
                                                     </SelectGroup>
                                                 </SelectContent>
                                             </Select>
+                                        </div>
+                                        <div className="flex flex-col gap-2">
+                                            <Label htmlFor="text">Jumlah</Label>
+                                            <Input type="text"
+                                                placeholder="2" 
+                                                required 
+                                                onChange={(e) => setAmount(e.target.value)}
+                                            />
                                         </div>
                                         <div className="flex-col flex gap-2">
                                             <h3 className="font-bold">{price}</h3>
@@ -237,7 +252,7 @@ export default function Home () {
                             <AlertTitle>{error}</AlertTitle>
                             <AlertDescription>{error === 'Kredensial tidak lengkap.' ?
                             'Isilah ulang formulir pre-order dengan semua informasi lengkap dan akurat.'
-                            : 'Terjadi masalah saat memproses pre-order milikmu. Cobalah lagi.'}</AlertDescription>
+                            : error === 'Error.' ? 'Terjadi masalah saat memproses pre-order milikmu. Cobalah lagi.' : 'Isilah ulang dengan jumlah yang valid.'}</AlertDescription>
                         </Alert>
                     </motion.div>
                 ) : null }
