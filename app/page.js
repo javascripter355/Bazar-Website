@@ -107,8 +107,8 @@ export default function Home () {
         <div className="flex flex-col items-center w-screen">
             <div className={`grid place-items-center w-screen px-16 py-32 gap-16 ${ popUp || error || success ? 'blur-[3px] opacity-60' : '' } grid-rows-[auto_auto_auto] transition-all duration-500`}>
                 <motion.div variants={variants} initial="hidden" whileInView="show" viewport={{ margin: "-50px", once: true }} className="flex flex-col items-center gap-2">
-                    <motion.h1 variants={variants} className="text-3xl font-sans text-center font-bold">Lorem ipsum <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">dolor</span> sit amet.</motion.h1>
-                    <motion.h2 variants={variants} className="text-[#bbb] font-mono text-center">Consetectur adispicing elit.</motion.h2>
+                    <motion.h1 variants={variants} className="text-3xl font-sans text-center font-bold">Mau <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">nikmat</span>? Beli di Joseph Class.</motion.h1>
+                    <motion.h2 variants={variants} className="text-[#bbb] font-mono text-center">Pre-order sekarang, nikmati nanti.</motion.h2>
                     <motion.span variants={variants} className="hidden"></motion.span>
                     <motion.span variants={variants} className="hidden"></motion.span>
                     <motion.div variants={variants}>
