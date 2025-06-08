@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import tahuIsi from "../public/tahu-isi.jpg";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import keripikKaca from "../public/keripik-kaca.jpeg";
@@ -26,6 +26,22 @@ export default function Home () {
             transition: {
                 duration: 0.8,
                 staggerChildren: 0.1
+            }
+        }
+    }
+
+    const preorderVariants = {
+        hidden: {
+            y: 10,
+            filter: 'blur(5px)',
+            opacity: 0,
+        },
+        show: {
+            y: 0,
+            filter: 'blur(0px)',
+            opacity: 1,
+            transition: {
+                duration: 0.5
             }
         }
     }
@@ -64,6 +80,13 @@ export default function Home () {
                     <h3 className="text-[#ddd]">Air Mineral</h3>
                 </motion.div>
             </motion.div>
+            <AnimatePresence>
+                {popUp ? (
+                    <motion.div variants={preorderVariants} initial="hidden" animate="show" exit="hidden">
+                        
+                    </motion.div>
+                ) : null }
+            </AnimatePresence>
         </div>
     );
 }
