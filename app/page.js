@@ -26,6 +26,27 @@ export default function Home () {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
 
+    let price;
+    switch (order) {
+        case 'Tahu Isi':
+            price = "5.000"
+            break;
+        case 'Keripik Kaca':
+            price = '10.000'
+            break;
+        case 'Basreng Asin':
+            price = '10.000'
+            break;
+        case 'Basreng Pedas':
+            price = '10.000'
+            break;
+        case 'Air Mineral':
+            price = '5.000'
+            break;
+        default:
+            price = null;
+    }
+
     useEffect(() => {
         if (error) {
             const timer = setTimeout(() => {
@@ -107,7 +128,7 @@ export default function Home () {
         <div className="flex flex-col items-center w-screen">
             <div className={`grid place-items-center w-screen px-16 py-32 gap-16 ${ popUp || error || success ? 'blur-[3px] opacity-60' : '' } grid-rows-[auto_auto_auto] transition-all duration-500`}>
                 <motion.div variants={variants} initial="hidden" whileInView="show" viewport={{ margin: "-50px", once: true }} className="flex flex-col items-center gap-2">
-                    <motion.h1 variants={variants} className="text-3xl font-sans text-center font-bold">Mau <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">nikmat</span>? Beli di Joseph Class.</motion.h1>
+                    <motion.h1 variants={variants} className="text-3xl font-sans text-center font-bold">Mau <span className="bg-gradient-to-r from-blue-300 to-[#ddd] bg-clip-text text-transparent">nikmat</span>? Beli di <span className="bg-gradient-to-r from-yellow-300 to-[#ddd] bg-clip-text text-transparent">9.4 Joseph Class</span>.</motion.h1>
                     <motion.h2 variants={variants} className="text-[#bbb] font-mono text-center">Pre-order sekarang, nikmati nanti.</motion.h2>
                     <motion.span variants={variants} className="hidden"></motion.span>
                     <motion.span variants={variants} className="hidden"></motion.span>
@@ -173,7 +194,8 @@ export default function Home () {
                                                         <SelectLabel>Makanan</SelectLabel>
                                                         <SelectItem value="Tahu Isi">Tahu Isi</SelectItem>
                                                         <SelectItem value="Keripik Kaca">Keripik Kaca</SelectItem>
-                                                        <SelectItem value="Basreng">Basreng</SelectItem>
+                                                        <SelectItem value="Basreng Pedas">Basreng Pedas</SelectItem>
+                                                        <SelectItem value="Basreng Asin">Basreng Asin</SelectItem>
                                                     </SelectGroup>
                                                     <SelectSeparator />
                                                     <SelectGroup>
@@ -183,7 +205,10 @@ export default function Home () {
                                                 </SelectContent>
                                             </Select>
                                         </div>
-                                        <Button type="submit" onClick={handleSubmit}>Pre-order</Button>
+                                        <div className="flex-col flex gap-2">
+                                            <h3 className="font-bold">{price}</h3>
+                                            <Button type="submit" onClick={handleSubmit}>Pre-order</Button>
+                                        </div>
                                     </div>
                                 </form>
                             </CardContent>
