@@ -11,12 +11,12 @@ export default function Admin() {
 
     const fetchData = async () => {
         const res = await axios.get(`${baseUrl}/api/preorder/admin`);
-        setData(prev => [...prev, res]);
+        setData(res.data);
     }
 
     useEffect(() => {
         fetchData();
-    });
+    }), [];
 
     return (
         <div>
