@@ -15,7 +15,7 @@ export default function Admin() {
     }
 
     useEffect(() => {
-        fetchData;
+        fetchData();
     });
 
     return (
