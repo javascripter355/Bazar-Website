@@ -10,7 +10,7 @@ export default function Admin() {
     const baseUrl = `${process.env.NODE_ENV === 'production' ? 'https://joseph-class-bazaar.vercel.app' : 'http://localhost:3000'}`
 
     const fetchData = async () => {
-        const res = await axios.get(`${baseUrl}/api/admin`);
+        const res = await axios.get(`${baseUrl}/api/preorder/admin`);
         setData(prev => [...prev, res]);
     }
 
