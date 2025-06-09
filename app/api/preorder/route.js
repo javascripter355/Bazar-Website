@@ -12,6 +12,15 @@ export async function POST(req) {
                 headers: { 'Content-Type': 'application/json' }
             });
         }
+
+        if (isNaN(amount)) {
+            return new Response(JSON.stringify({ message: "Jumlah tidak valid." }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+
         const userId = await client.incr('user:id');
         await client.hSet(`user:${userId}`, {
             nama: name,
