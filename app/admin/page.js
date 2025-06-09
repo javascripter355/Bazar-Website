@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Admin() {
     const [data, setData] = useState([]);
 
-    const baseUrl = `${process.env.NODE_ENV === production ? 'https://joseph-class-bazaar.vercel.app' : 'http://localhost:3000'}`
+    const baseUrl = `${process.env.NODE_ENV === 'production' ? 'https://joseph-class-bazaar.vercel.app' : 'http://localhost:3000'}`
 
     const fetchData = async () => {
         const res = await axios.get(`${baseUrl}/api/admin`);
