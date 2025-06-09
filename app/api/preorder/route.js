@@ -5,8 +5,8 @@ config();
 
 export async function POST(req) {
     try {
-        const { name, order } = await req.json();
-        if (!name || !order) {
+        const { name, order, amount } = await req.json();
+        if (!name || !order || !amount) {
             return new Response(JSON.stringify({ message: "Kredensial tidak lengkap." }), {
                 status: 400,
                 headers: { 'Content-Type': 'application/json' }
@@ -15,7 +15,8 @@ export async function POST(req) {
         const userId = await client.incr('user:id');
         await client.hSet(`user:${userId}`, {
             nama: name,
-            pesanan: order
+            pesanan: order,
+            jumlah: amount
         });
         const user = await client.hGetAll(`user:${userId}`);
         console.log(user);
